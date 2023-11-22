@@ -1,0 +1,2 @@
+﻿FileName.obj : error LNK2005: main 已经在 4.obj 中定义
+C:\Users\28624\source\repos\TEST1\TEST1\Project5\x64\Debug\Project5.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
