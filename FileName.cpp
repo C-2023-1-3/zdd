@@ -1,36 +1,43 @@
 #include <iostream>
 using namespace std;
-bool is_prime(int num);
+void arrange(int p[], int size);
+
 int main()
 {
-	int x = 0;
-	cout << "请输入" << endl;
-	cin >> x;
-	int a = is_prime(x);
-	cout << bool(a);
-}
-bool is_prime(int num)
-{
-	if (num == 2)
+	int  a;
+	int size;
+	
+	cin >> size;
+	int* p = new int[size];
+	for (int i = 0; i < size; i++)
 	{
-		num = 1;
+		cin >> *(p + 1);
 	}
-
-	else
+	cout << "动态调试" << endl << "请输入你想要的数组" << endl;
+	cin >> a;
+	cout << "p[" << a - 1 << "]=" << *(p + a - 1) << endl;
+	arrange(p, size);
+	for (int b = 0; b < size; b++)
 	{
-		for (int x = 2; x < num; x++)
+		cout << *(p + b) << "  ";
+		cout << endl;
+		delete p;
+		return 0;
+	}
+}
+void arrange(int p[], int size)
+{
+	int temp;
+	for (int n = 0; n < size; n++)
+	{
+		for (int m = 0; m < size; m++)
 		{
-			int c = num % x;
-			if (c != 0)
+			if (*(p + m) > *(p + m + 1))
 			{
-				num = 1;
+				temp = *(p + m);
+				*(p + m) = *(p + m + 1);
+				*(p + m + 1) = temp;
 			}
-			else
-			{
-				num = 0;
-			}
-
 		}
 	}
-	return num;
 }
