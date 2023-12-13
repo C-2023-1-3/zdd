@@ -1,13 +1,36 @@
 #include <iostream>
 using namespace std;
-int* f()
+bool is_prime(int num);
+int main()
 {
-		static int list[] = {1,2,3,4};
-		return list;
+	int x = 0;
+	cout << "ÇëÊäÈë" << endl;
+	cin >> x;
+	int a = is_prime(x);
+	cout << bool(a);
 }
-void main()
+bool is_prime(int num)
 {
-	int* p = f();
-	cout << p[0] << endl;
-	cout <<p[1] << endl;
+	if (num == 2)
+	{
+		num = 1;
+	}
+
+	else
+	{
+		for (int x = 2; x < num; x++)
+		{
+			int c = num % x;
+			if (c != 0)
+			{
+				num = 1;
+			}
+			else
+			{
+				num = 0;
+			}
+
+		}
+	}
+	return num;
 }
